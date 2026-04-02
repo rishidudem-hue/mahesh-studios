@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahesh Studios</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --teal: #a8d5cf;
+  --beige: #f5f1ea;
+  --white: #ffffff;
+  --text: #2c2c2c;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--beige);
+  color: var(--text);
+}
+
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 60px; background:transparent;
+}
+header h1 { font-weight:600; }
+nav a {
+  margin-left:25px; text-decoration:none; color:var(--text);
+  position:relative;
+}
+nav a::after {
+  content:''; position:absolute; bottom:-5px; left:0;
+  width:0; height:2px; background:var(--teal);
+  transition:0.3s;
+}
+nav a:hover::after { width:100%; }
+
+.hero {
+  height:100vh;
+  background:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') center/cover;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; color:white;
+}
+.hero h2 { font-size:56px; margin-bottom:10px; }
+.hero p { font-size:18px; }
+.btn {
+  margin-top:20px; padding:12px 30px;
+  border:none; background:var(--teal);
+  cursor:pointer; border-radius:25px;
+  transition:0.3s;
+}
+.btn:hover { transform:scale(1.05); }
+
+.section { padding:100px 60px; }
+
+.about {
+  display:flex; gap:50px; align-items:center;
+}
+.about img {
+  width:50%; border-radius:15px;
+}
+.about-text { width:50%; }
+
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.card {
+  background:var(--white);
+  padding:25px; border-radius:15px;
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-10px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.gallery img {
+  width:100%; border-radius:10px; cursor:pointer;
+  transition:0.3s;
+}
+.gallery img:hover { transform:scale(1.05); }
+
+.cta {
+  background:var(--teal);
+  text-align:center; padding:60px;
+  border-radius:20px;
+}
+
+.testimonials .card { font-style:italic; }
+
+form input, form textarea {
+  width:100%; padding:12px; margin:10px 0;
+  border-radius:8px; border:1px solid #ccc;
+}
+
+footer {
+  background:#eaeaea;
+  padding:40px; text-align:center;
+}
+
+@media(max-width:768px) {
+  .about { flex-direction:column; }
+  .about img, .about-text { width:100%; }
+  header { padding:20px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+<h1>Mahesh Studios</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h2>Capturing Moments That Last Forever</h2>
+<p>Professional Photography & Videography Services with 15+ Years of Expertise</p>
+<button class="btn">Book a Session</button>
+</div>
+</section>
+
+<section class="section about" id="about">
+<img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
+<div class="about-text">
+<h2>About Mahesh Studios</h2>
+<p>Founded by Mahesh Konda, Mahesh Studios brings over 15 years of expertise in capturing timeless memories through photography and videography.</p>
+</div>
+</section>
+
+<section class="section" id="services">
+<h2>Services</h2>
+<div class="grid">
+<div class="card"><h3>Photography</h3><p>Premium portrait & event photography.</p></div>
+<div class="card"><h3>Videography</h3><p>Cinematic storytelling videos.</p></div>
+<div class="card"><h3>Event Videography</h3><p>Capture every special moment.</p></div>
+<div class="card"><h3>Video Editing</h3><p>Professional editing services.</p></div>
+<div class="card"><h3>Invitation Videos</h3><p>Creative digital invitations.</p></div>
+</div>
+</section>
+
+<section class="section" id="portfolio">
+<h2>Featured Work</h2>
+<div class="grid gallery">
+<img src="https://source.unsplash.com/400x300/?wedding">
+<img src="https://source.unsplash.com/400x300/?portrait">
+<img src="https://source.unsplash.com/400x300/?event">
+<img src="https://source.unsplash.com/400x300/?cinematic">
+</div>
+</section>
+
+<section class="section">
+<div class="cta">
+<h2>Let’s Capture Your Special Moments</h2>
+<button class="btn">Contact Us</button>
+</div>
+</section>
+
+<section class="section testimonials">
+<h2>Testimonials</h2>
+<div class="grid">
+<div class="card">"Amazing work! Highly professional."</div>
+<div class="card">"Captured our wedding beautifully."</div>
+<div class="card">"Top quality and great experience."</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2>Contact Us</h2>
+<p>📞 Phone: <a href="tel:9550443455">9550443455</a></p>
+<form>
+<input type="text" placeholder="Name">
+<input type="text" placeholder="Phone">
+<input type="email" placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 Mahesh Studios | All Rights Reserved</p>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919550443455" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 18px;border-radius:50%;text-decoration:none;font-size:20px;box-shadow:0 5px 15px rgba(0,0,0,0.2);">💬</a>
+
+</body>
+</html>
